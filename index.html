@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BBQの写真｜ダウンロード期限 2026年12月31日</title>
+<meta name="description" content="BBQの写真と動画の共有ページ。ダウンロード期限は2026年12月31日です。">
+<meta name="theme-color" content="#FF6B1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2A1305;--or:#FF6B1A;--ord:#C2410C;--paper:#FFFAF4;--pe:#FFE4CC;--mu:#7A5A48;--ln:rgba(42,19,5,.14);--bar:56px;--sa:env(safe-area-inset-top);--g:clamp(16px,5vw,72px);--row:clamp(140px,24vw,280px);--f:"BIZ UDPGothic","UD Shin Go","BIZ UDGothic","Hiragino Sans","Yu Gothic UI",Meiryo,sans-serif}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:16px/1.7 var(--f)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+:focus-visible{outline:3px solid var(--ord);outline-offset:3px}
+.band :focus-visible{outline-color:var(--ink)}.hero :focus-visible{outline-color:#fff}
+#albums,#gal{scroll-margin-top:calc(var(--bar) + var(--sa))}
+/* 上部バー：期限を常に表示 */
+.top{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:auto 1fr auto;align-items:center;column-gap:12px;height:calc(var(--bar) + var(--sa));padding:var(--sa) var(--g) 0;background:rgba(255,250,244,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.brand{display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.brand i{width:14px;height:14px;border-radius:50%;background:var(--or);box-shadow:0 0 0 4px rgba(255,107,26,.25)}
+.nav{display:flex;justify-content:flex-end;gap:clamp(16px,2.5vw,32px);padding-right:clamp(16px,3vw,32px)}
+.nav a{position:relative;padding:8px 2px;font-weight:700;font-size:.95rem}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.nav a:hover::after,.nav a[aria-current]::after{transform:scaleX(1)}
+.tr{display:flex;align-items:center;gap:10px;justify-self:end}
+.bg{display:none;width:44px;height:44px;margin-right:-10px;place-content:center;gap:5px}
+.bg span{display:block;width:22px;height:2px;background:var(--ink);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .2s}
+.bg[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bg[aria-expanded=true] span:nth-child(2){opacity:0}
+.bg[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:899px){.nav{display:none}.bg{display:grid}.top{grid-template-columns:1fr auto}}
+.pill{display:flex;gap:8px;align-items:baseline;padding:5px 14px;background:var(--or);font-weight:700;font-size:.9rem;border-radius:99px;white-space:nowrap}
+.pill .s{display:none}
+@media(max-width:520px){.pill .l,.pill .dt{display:none}.pill .s{display:inline}}
+.menu{position:fixed;inset:calc(var(--bar) + var(--sa)) 0 0;z-index:25;display:flex;flex-direction:column;overflow:auto;padding:16px var(--g) calc(40px + env(safe-area-inset-bottom));background:var(--paper);animation:mn .45s cubic-bezier(.16,1,.3,1)}
+@keyframes mn{from{opacity:0;transform:translateY(-12px)}}
+.menu>a{padding:14px 0;border-bottom:1px solid var(--ln);font-size:1.6rem;font-weight:700}
+.mg p{margin:28px 0 12px;color:var(--mu);font-size:.9rem}
+.mg div{display:flex;flex-wrap:wrap;gap:8px}
+.mg button{min-height:44px;padding:0 16px;border:1.5px solid var(--ink);border-radius:99px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mg button:active{background:var(--or)}
+.mn{margin-top:auto;padding-top:32px;font-weight:700}.mn .cd{margin-left:8px;padding:2px 12px;background:var(--or);border-radius:99px}
+@media(min-width:900px){.menu{display:none!important}}
+/* ヒーロー(集合写真) */
+.hero{--hc:#fff;--hx:var(--ink);position:relative;display:flex;align-items:flex-end;min-height:calc(100svh - var(--bar) - var(--sa));isolation:isolate;background:var(--ink);color:var(--hc)}
+.hm{position:absolute;inset:0;z-index:-2}
+.hm img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:0;transform:scale(1.06);transition:opacity 1.2s,transform 3.2s cubic-bezier(.16,1,.3,1)}
+.hm img.on{opacity:1;transform:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(30,12,4,.9),rgba(30,12,4,.45) 38%,transparent 66%)}
+.hero.np{--hc:var(--ink);--hx:var(--paper);background:var(--or)}.hero.np::after{display:none}
+.hc{width:100%;max-width:1400px;margin:0 auto;padding:var(--g);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;align-items:end}
+h1{font-size:clamp(3.2rem,10vw,8rem);line-height:1;letter-spacing:.01em}
+.hd{display:block;margin-bottom:12px;font-weight:700;letter-spacing:.12em;font-variant-numeric:tabular-nums}
+.lead{margin-top:20px;max-width:26em}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;margin:24px 12px 0 0;border:1.5px solid var(--hc);border-radius:99px;font-weight:700;transition:.3s}
+.btn.p{background:var(--hc);color:var(--hx)}.btn:hover{background:var(--hx);color:var(--hc)}
+.dc{background:var(--paper);color:var(--ink);padding:clamp(22px,3vw,36px);border-radius:4px}
+.dc small{display:block;font-weight:700;color:var(--ord)}
+.dc time{display:block;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;line-height:1.2}
+.dc .cd{display:inline-block;margin-top:12px;padding:2px 16px;background:var(--or);font-weight:700;border-radius:99px}
+@media(max-aspect-ratio:5/4),(max-width:760px){
+.hero{--hc:var(--ink);--hx:var(--paper);display:block;min-height:0;background:var(--or)}.hero::after{display:none}
+.hm{position:relative;inset:auto;z-index:0;aspect-ratio:var(--hr,10/7);background:var(--pe)}
+.hc{grid-template-columns:1fr;padding-top:28px;padding-bottom:40px}}
+/* アルバム(オレンジの帯) */
+.band{background:var(--or)}
+.in{max-width:1400px;margin:0 auto;padding:clamp(56px,9vw,112px) var(--g)}
+.sh{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:clamp(24px,4vw,44px)}
+h2{font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:1.2}
+.st{display:flex;gap:28px;font-size:.85rem}.st b{display:block;font-size:2.1rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.msg{min-height:1.7em;margin-bottom:12px;font-weight:700}
+.albums{display:grid;gap:clamp(10px,2vw,24px);grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));list-style:none;padding:0}
+@media(max-width:560px){.albums{grid-template-columns:1fr 1fr}}
+.al{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--pe);text-align:left;border-radius:3px;color:#fff}
+.al img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s,transform 2s cubic-bezier(.16,1,.3,1)}.al img.on{opacity:1}
+.al::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,12,4,.88),transparent 62%)}
+/* サブサブフォルダ対応：テキスト省略と折り返し */
+.ai{position:absolute;inset:auto 14px 14px;z-index:1;display:flex;flex-direction:column;gap:2px;max-height:calc(100% - 28px)}
+.ai small{font-size:.75rem;opacity:.9;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}
+.ai strong{font-size:1.15rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}
+.al[aria-pressed=true]{outline:4px solid var(--ink);outline-offset:-4px}
+@media(hover:hover){.al:hover img{transform:scale(1.08)}}
+/* ギャラリー(縦横比を保った段組み) */
+.gsec{max-width:1400px;margin:0 auto;padding:0 var(--g)}
+.rail{position:sticky;top:calc(var(--bar) + var(--sa));z-index:20;display:flex;gap:8px;overflow-x:auto;padding:12px var(--g);margin:0 calc(var(--g)*-1);background:rgba(255,250,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--ln);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 16px;border:1.5px solid var(--ink);border-radius:99px;white-space:nowrap;transition:.25s;max-width:240px;overflow:hidden;text-overflow:ellipsis}
+.chip small{margin-left:6px;opacity:.7;pointer-events:none}.chip:hover{background:var(--pe)}.chip[aria-pressed=true]{background:var(--or);font-weight:700}
+.gh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin:clamp(32px,5vw,56px) 0 20px}.gh p{color:var(--mu)}
+.grid{display:flex;flex-wrap:wrap;gap:clamp(4px,.8vw,10px);list-style:none;padding:0 0 clamp(72px,10vw,140px)}
+.grid::after{content:"";flex-grow:1000000}
+.tile{position:relative;flex-grow:calc(var(--r)*100);flex-basis:calc(var(--r)*var(--row));min-width:0;overflow:hidden;container-type:inline-size;background:var(--pe);border-radius:2px}
+.ph{display:block;padding-bottom:calc(100%/var(--r))}
+.op{position:absolute;inset:0;display:block;width:100%;cursor:zoom-in}
+.op img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s,transform 2s cubic-bezier(.16,1,.3,1)}.op img.on{opacity:1}
+@media(hover:hover){.tile:hover img{transform:scale(1.08)}}
+.vb{position:absolute;left:8px;top:8px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(30,12,4,.72);color:#fff;pointer-events:none}
+.ov{position:absolute;inset:auto 0 0;display:flex;align-items:flex-end;justify-content:space-between;gap:6px;padding:28px 8px 8px;background:linear-gradient(to top,rgba(30,12,4,.85),transparent);color:#fff;pointer-events:none;font-size:.75rem;line-height:1.35}
+.ov div{min-width:0}.ov time{display:block;font-weight:700;font-variant-numeric:tabular-nums}
+/* サブサブフォルダ対応：ギャラリーのテキスト省略 */
+.ov em{display:block;font-style:normal;color:#FFC48F;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}
+.grid.sub .ov em{display:none}
+@container (max-width:180px){.dd{display:none}}
+.ib{pointer-events:auto;flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(30,12,4,.7);color:#fff;transition:.25s}
+.ib:hover,.ib[data-s=done]{background:var(--or);color:var(--ink)}.ib[data-s=busy]{opacity:.5}
+@media(hover:hover){.ov{opacity:0;transform:translateY(8px);transition:.6s cubic-bezier(.16,1,.3,1)}.tile:hover .ov,.tile:focus-within .ov{opacity:1;transform:none}}
+footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;border-top:1px solid var(--ln);padding:32px var(--g);color:var(--mu);font-size:.9rem}
+footer a{color:var(--ink);font-weight:700;border-bottom:2px solid var(--or)}
+/* 拡大表示 */
+dialog{width:100%;height:100%;max-width:none;max-height:none;padding:0;border:0;background:#0F0A07;color:#fff}
+.v{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.vt,.vc{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px clamp(12px,3vw,32px)}
+.vt div{display:flex;gap:8px}.vt .ib{width:44px;height:44px;background:rgba(255,255,255,.14)}
+.vs{position:relative;display:grid;min-height:0}
+.vs img,.vs iframe{width:100%;height:100%;min-height:0;object-fit:contain;border:0;background:#000}
+.nv{position:absolute;top:50%;translate:0 -50%;z-index:2;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(15,10,7,.6)}
+.nv:hover{background:var(--or);color:var(--ink)}.pv{left:12px}.nx{right:12px}
+@media(max-width:600px){.nv{width:40px;height:40px}.pv{left:6px}.nx{right:6px}}
+.vc time{font-weight:700;font-variant-numeric:tabular-nums}.vc em{font-style:normal;color:#FFC48F;margin-left:12px}
+.dl{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1.5px solid currentColor;border-radius:99px;font-weight:700;transition:.3s}
+.dl:hover{background:var(--or);border-color:var(--or);color:var(--ink)}.dl:disabled{opacity:.65}
+@media(prefers-reduced-motion:reduce){*,::before,::after{transition-duration:.01ms!important;animation:none!important;scroll-behavior:auto!important}.hm img,.tile:hover img,.al:hover img{transform:none}}
+</style>
+</head>
+<body>
+<div class="top" id="top">
+  <a class="brand" href="#top"><i></i>BBQの写真</a>
+  <nav class="nav" aria-label="メイン"><a href="#top">ホーム</a><a href="#albums">アルバム</a><a href="#gal">ギャラリー</a></nav>
+  <div class="tr">
+    <div class="pill"><span class="l">ダウンロード期限</span><span class="s">期限</span><span class="dt">12/31(木)</span><span class="cd"></span></div>
+    <button class="bg" id="bg" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<nav class="menu" id="menu" aria-label="メニュー" hidden>
+  <a href="#top">ホーム</a><a href="#albums">アルバム</a><a href="#gal">ギャラリー</a>
+  <div class="mg" id="mg" hidden><p>アルバムから探す</p><div id="ml"></div></div>ｓ
+  <p class="mn">ダウンロード期限 2026年12月31日<span class="cd"></span></p>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="hm" id="hm"><img id="hi" alt="BBQの集合写真" decoding="async" referrerpolicy="no-referrer"></div>
+  <div class="hc">
+    <div>
+      <time class="hd" id="hd" hidden></time>
+      <h1>BBQの写真</h1>
+      <p class="lead">当日の写真と動画を撮影順に並べています。気に入ったものはダウンロードして保存してください。</p>
+      <a class="btn p" href="#albums">写真を見る</a><button class="btn" id="hb" type="button" hidden></button>
+    </div>
+    <aside class="dc" aria-label="ダウンロード期限"><small>ダウンロード期限</small><time datetime="2026-12-31">2026年12月31日</time><span class="cd"></span></aside>
+  </div>
+</header>
+
+<main>
+  <section class="band" id="albums"><div class="in">
+    <div class="sh"><h2 id="ah">アルバム</h2><div class="st" id="st"></div></div>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    <ul class="albums" id="al"></ul>
+  </div></section>
+  <section class="gsec" id="gal">
+    <nav class="rail" id="rail" aria-label="アルバムの切り替え" hidden></nav>
+    <div class="gh"><h2 id="gt"></h2><p id="gc"></p></div>
+    <ul class="grid" id="grid"></ul>
+  </section>
+</main>
+<footer><span>写真と動画のダウンロードは <time datetime="2026-12-31">2026年12月31日</time> までにお願いします。</span><a href="#top">ページの先頭へ</a></footer>
+
+<dialog id="vw" aria-label="拡大表示"><div class="v">
+  <div class="vt"><span id="vn"></span><div><button class="dl" id="vd" type="button"></button><button class="ib" id="vx" type="button" aria-label="閉じる"></button></div></div>
+  <div class="vs" id="vs">
+    <button class="nv pv" id="vp" type="button" aria-label="前へ"></button>
+    <img id="vi" alt="" referrerpolicy="no-referrer"><iframe id="vf" hidden allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <button class="nv nx" id="vnx" type="button" aria-label="次へ"></button>
+  </div>
+  <div class="vc"><div><time id="vt2"></time><em id="vg"></em></div></div>
+</div></dialog>
+
+<script>
+(()=>{'use strict';
+/* ===== 設定 ===== */
+const API_KEY="AIzaSyD-9mMx8oO546Dk2XKxHsOfbvwGJGsDHck"; // Google Drive API のキー
+const FOLDER_URL="https://drive.google.com/drive/folders/17pJN1G2Z3CfuD9R-PA8rLNhCmDniG6Ne?usp=sharing"; // 指定されたGoogleドライブフォルダURL
+const HERO_NAME=/^集合写真/; // この名前で始まる画像をヘッダー写真にする
+/* ================ */
+const API="https://www.googleapis.com/drive/v3/files",FM="application/vnd.google-apps.folder",ALL="\0all";
+const $=s=>document.querySelector(s),
+E=Object.fromEntries(['hero','hm','hi','hb','hd','msg','st','ah','al','rail','grid','gt','gc','gal','vw','vi','vf','vn','vt2','vg','vd','mg','ml'].map(k=>[k,$('#'+k)]));
+const ic=(d,s=20)=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`,
+DL=ic('<path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>'),PLAY=ic('<path d="M8 5v14l11-7z" fill="currentColor"/>',16);
+$('#vx').innerHTML=ic('<path d="M6 6l12 12M18 6L6 18"/>');$('#vp').innerHTML=ic('<path d="M15 5l-7 7 7 7"/>');$('#vnx').innerHTML=ic('<path d="M9 5l7 7-7 7"/>');
+E.vd.innerHTML=DL+'<span class="lb">ダウンロード</span>';
+
+/* 期限までの日数(日本時間) ※12月31日(11は12月を意味します)に更新 */
+{const j=new Date(Date.now()+324e5),n=Math.round((Date.UTC(2026,11,31)-Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate()))/864e5);
+document.querySelectorAll('.cd').forEach(e=>e.textContent=n>0?`あと${n}日`:n===0?'本日が最終日':'期限を過ぎています')}
+
+/* 解析 */
+const fid=t=>{t=(t||'').trim();return(t.match(/\/folders\/([\w-]{10,})/)||t.match(/[?&]id=([\w-]{10,})/)||t.match(/^([\w-]{20,})$/)||[])[1]||null};
+const shot=n=>{const m=n.match(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/);if(!m)return null;const[,y,o,d,h,i,s]=m;
+if(+o<1||+o>12||+d<1||+d>31||+h>23||+i>59||+s>59)return null;return{date:`${y}.${o}.${d}`,time:`${h}:${i}:${s}`,k:+(y+o+d+h+i+s)}};
+const full=p=>p.s?p.s.date+' '+p.s.time:'撮影日時不明';
+
+/* Google Drive API */
+async function gf(u){const r=await fetch(u);if(!r.ok){let m='';try{m=(await r.json()).error.message}catch(_){}const e=new Error(m||'HTTP '+r.status);e.status=r.status;throw e}return r.json()}
+async function ls(id){const o=[];let t='';do{const p=new URLSearchParams({q:`'${id}' in parents and trashed=false`,
+fields:'nextPageToken,files(id,name,mimeType,thumbnailLink,imageMediaMetadata(width,height,rotation),videoMediaMetadata(width,height))',
+pageSize:'1000',orderBy:'name',supportsAllDrives:'true',includeItemsFromAllDrives:'true',key:API_KEY});
+if(t)p.set('pageToken',t);const d=await gf(`${API}?${p}`);o.push(...d.files);t=d.nextPageToken||''}while(t);return o}
+
+/* サブサブフォルダ対応：区切り文字を「 ＞ 」にして分かりやすく */
+function mk(f,p,rn){const m=f.imageMediaMetadata||f.videoMediaMetadata||{};let w=m.width,h=m.height;if(m.rotation%2)[w,h]=[h,w];
+const r=Math.min(Math.max(w&&h?w/h:4/3,.5),2.4);
+const jp=p.join(' ＞ '), pp=p.slice(0,-1).join(' ＞ ');
+return{id:f.id,name:f.name,v:f.mimeType[0]==='v',r,t:f.thumbnailLink||null,s:shot(f.name),key:p.length?jp:rn,nm:p.length?p[p.length-1]:rn,par:pp}}
+
+// サブフォルダを再帰的にたどる(同時6リクエストまで)
+function crawl(root,rn,prog){const out=[],q=[{id:root,p:[]}];let run=0,bad=0;
+return new Promise((res,rej)=>{const pump=()=>{while(!bad&&run<6&&q.length){const j=q.shift();run++;
+ls(j.id).then(it=>{for(const f of it){if(f.mimeType===FM)q.push({id:f.id,p:[...j.p,f.name]});else if(/^(image|video)\//.test(f.mimeType||''))out.push(mk(f,j.p,rn))}prog(out.length)})
+.catch(e=>{if(!bad){bad=1;rej(e)}}).finally(()=>{run--;if(bad)return;!q.length&&!run?res(out):pump()})}};pump()})}
+
+/* 画像 */
+const iu=(p,z)=>p.t?p.t.replace(/=s\d+(-c)?$/,'=s'+z):`https://drive.google.com/thumbnail?id=${p.id}&sz=w${z}`;
+function im(p,z,alt){const i=new Image();i.alt=alt;i.decoding='async';i.loading='lazy';i.referrerPolicy='no-referrer';i.onload=()=>i.classList.add('on');
+i.onerror=()=>{if(!i.f){i.f=1;i.src=`https://drive.google.com/thumbnail?id=${p.id}&sz=w${z}`}};i.src=iu(p,z);return i}
+const pre=(p,z)=>{const b=new Image();b.referrerPolicy='no-referrer';b.src=iu(p,z);return b};
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+
+/* ダウンロード */
+async function dl(p,b){const l=b.querySelector('.lb'),o=l&&l.textContent,set=t=>{if(l)l.textContent=t},
+fin=()=>setTimeout(()=>{b.dataset.s='';b.disabled=false;set(o)},1800),dr=`https://drive.google.com/uc?export=download&id=${p.id}`;b.disabled=true;
+if(p.v){const a=el('a');a.href=dr;a.target='_blank';a.rel='noopener';document.body.append(a);a.click();a.remove();b.dataset.s='done';set('開始しました');return fin()}
+b.dataset.s='busy';set('保存中…');
+try{const r=await fetch(`${API}/${p.id}?alt=media&supportsAllDrives=true&key=${API_KEY}`);if(!r.ok)throw 0;
+const u=URL.createObjectURL(await r.blob()),a=el('a');a.href=u;a.download=p.name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),15e3);b.dataset.s='done';set('保存しました')}
+catch(_){window.open(dr,'_blank','noopener');set(o)}
+fin()}
+
+/* 状態 */
+let all=[],vis=[],albums=[],vi=0;
+const say=(t,k='')=>{E.msg.textContent=t;if(k==='err'){E.hm.hidden=true;E.hero.classList.add('np')}};
+const why=e=>e.code?'フォルダのリンクではありません。':e.status===404?'フォルダが見つかりません。リンクを確認してください。'
+:e.status===401||e.status===403?`読み込めませんでした。フォルダの共有設定が「リンクを知っている全員」か確認してください。（${e.message}）`
+:e instanceof TypeError?'ネットワークに接続できません。再読み込みしてください。':`エラーが発生しました。（${e.message}）`;
+
+async function load(){
+ const id=fid(FOLDER_URL);
+ if(!id||id.startsWith('YOUR_'))return say('フォルダのリンクが未設定です。index.html の FOLDER_URL を設定してください。','err');
+ if(API_KEY.startsWith('YOUR_'))return say('APIキーが未設定です。index.html の API_KEY を設定してください。','err');
+ say('写真と動画を読み込んでいます…');
+ try{
+  const m=await gf(`${API}/${id}?${new URLSearchParams({fields:'name,mimeType',supportsAllDrives:'true',key:API_KEY})}`);
+  if(m.mimeType!==FM)throw Object.assign(new Error(''),{code:1});
+  const l=await crawl(id,m.name,n=>say(`読み込み中… ${n}件見つかりました`));
+  l.sort((a,b)=>a.s&&b.s?a.s.k-b.s.k||a.name.localeCompare(b.name):a.s?-1:b.s?1:a.name.localeCompare(b.name,'ja'));
+  const hx=l.findIndex(p=>!p.v&&HERO_NAME.test(p.name)),hero=hx<0?null:l.splice(hx,1)[0];
+  all=l;heroSet(hero);
+  if(!all.length)return say(hero?'集合写真のほかに、写真・動画は見つかりませんでした。':'このフォルダには写真・動画が見つかりませんでした。');
+  const d=all.find(p=>p.s);if(d){E.hd.textContent=d.s.date;E.hd.hidden=false}
+  build();say('');
+ }catch(e){console.error(e);say(why(e),'err')}
+}
+
+function heroSet(p){
+ if(!p){E.hm.hidden=true;E.hero.classList.add('np');return}
+ const i=E.hi;i.onload=()=>{E.hm.style.setProperty('--hr',`${i.naturalWidth}/${i.naturalHeight}`);i.classList.add('on')};
+ i.onerror=()=>{if(!i.f){i.f=1;i.src=`https://drive.google.com/thumbnail?id=${p.id}&sz=w2000`}};i.src=iu(p,2000);
+ E.hb.innerHTML=DL+'<span class="lb">集合写真を保存</span>';E.hb.hidden=false;E.hb.onclick=()=>dl(p,E.hb)}
+
+function build(){
+ const by=new Map();all.forEach(p=>{if(!by.has(p.key))by.set(p.key,{key:p.key,nm:p.nm,par:p.par,it:[]});by.get(p.key).it.push(p)});
+ albums=[...by.values()].sort((a,b)=>a.key.localeCompare(b.key,'ja',{numeric:true}));
+ const multi=albums.length>1,nv=all.filter(p=>p.v).length,dup=new Set(albums.map(a=>a.nm).filter((n,i,x)=>x.indexOf(n)!==i)),lb=a=>dup.has(a.nm)?a.key:a.nm;
+ E.st.innerHTML=(multi?[[albums.length,'アルバム']]:[]).concat([[all.length-nv,'写真'],[nv,'動画']]).map(([n,t])=>`<div><b>${n}</b>${t}</div>`).join('');
+ E.ah.textContent=multi?'アルバム':'写真と動画';E.al.hidden=E.rail.hidden=!multi;
+ E.al.replaceChildren(...albums.map(a=>{
+  const li=el('li'),b=el('button','al');b.type='button';b.dataset.k=a.key;
+  const t=a.it.filter(p=>p.s).map(p=>p.s.time.slice(0,5)),s=el('span','ai');
+  if(a.par)s.append(el('small','par',a.par));
+  s.append(el('strong','',lb(a)),el('small','',`${a.it.length}件`+(t.length?` ${t[0]}〜${t[t.length-1]}`:'')));
+  b.append(im(a.it.find(p=>!p.v)||a.it[0],480,''),s);b.onclick=()=>pick(a.key,1);li.append(b);return li}));
+ E.rail.replaceChildren(...[[ALL,'すべて',all.length],...albums.map(a=>[a.key,lb(a),a.it.length])].map(([k,t,n])=>{
+  const b=el('button','chip',t);b.type='button';b.dataset.k=k;b.append(el('small','',n));b.onclick=()=>pick(k);return b}));
+ E.mg.hidden=!multi;E.ml.replaceChildren(...albums.map(a=>{const b=el('button','',lb(a));b.type='button';b.onclick=()=>{menu(false);pick(a.key,1)};return b}));
+ pick(ALL,0,1)}
+
+function pick(k,smooth,init){
+ document.querySelectorAll('.chip,.al').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.k===k)));
+ vis=k===ALL?all:all.filter(p=>p.key===k);
+ const nv=vis.filter(p=>p.v).length;
+ E.gt.textContent=k===ALL?'すべての写真と動画':k;E.gc.textContent=`写真${vis.length-nv}枚`+(nv?` 動画${nv}本`:'');
+ E.grid.classList.toggle('sub',k!==ALL);E.grid.replaceChildren(...vis.map(tile));
+ if(init)return;
+ const c=E.rail.querySelector('.chip[aria-pressed=true]');if(c)E.rail.scrollTo({left:c.offsetLeft-E.rail.clientWidth/2+c.offsetWidth/2,behavior:'smooth'});
+ if(smooth||E.gal.getBoundingClientRect().top<0)E.gal.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'})}
+
+function tile(p,i){
+ const li=el('li','tile'),o=el('button','op'),ov=el('div','ov'),tx=el('div'),tm=el('time'),b=el('button','ib');
+ li.style.setProperty('--r',p.r.toFixed(3));o.type=b.type='button';
+ o.setAttribute('aria-label',`${full(p)}の${p.v?'動画を再生':'写真を拡大'}`);o.append(im(p,640,p.nm));
+ if(p.v){const v=el('span','vb');v.innerHTML=PLAY;o.append(v)}
+ o.onclick=()=>openV(i);
+ if(p.s){tm.append(el('span','dd',p.s.date+' '),p.s.time)}else tm.textContent='撮影日時不明';
+ tx.append(tm,el('em','',p.key));
+ b.innerHTML=DL;b.setAttribute('aria-label','ダウンロード');b.onclick=()=>dl(p,b);
+ ov.append(tx,b);li.append(el('span','ph'),o,ov);return li}
+
+/* 拡大表示 */
+function show(n){vi=(n+vis.length)%vis.length;const p=vis[vi];
+ E.vn.textContent=`${vi+1} / ${vis.length}`;E.vt2.textContent=full(p);E.vg.textContent=p.key;
+ if(p.v){E.vi.hidden=true;E.vi.removeAttribute('src');E.vf.src=`https://drive.google.com/file/d/${p.id}/preview`;E.vf.hidden=false}
+ else{E.vf.hidden=true;E.vf.src='about:blank';E.vi.hidden=false;E.vi.alt=p.nm;E.vi.src=iu(p,640);
+  const b=pre(p,1600);b.onload=()=>{if(vis[vi]===p)E.vi.src=b.src};const nx=vis[(vi+1)%vis.length];if(nx&&!nx.v)pre(nx,1600)}
+ $('#vp').hidden=$('#vnx').hidden=vis.length<2}
+function openV(i){show(i);document.body.style.overflow='hidden';E.vw.showModal()}
+$('#vp').onclick=()=>show(vi-1);$('#vnx').onclick=()=>show(vi+1);$('#vx').onclick=()=>E.vw.close();E.vd.onclick=()=>dl(vis[vi],E.vd);
+E.vw.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(vi-1);if(e.key==='ArrowRight')show(vi+1)});
+E.vw.addEventListener('close',()=>{document.body.style.overflow='';E.vi.removeAttribute('src');E.vf.src='about:blank'});
+{let x=0,y=0;const s=$('#vs');s.addEventListener('touchstart',e=>{x=e.touches[0].clientX;y=e.touches[0].clientY},{passive:true});
+s.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-x,dy=t.clientY-y;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)show(vi+(dx<0?1:-1))},{passive:true})}
+
+/* メニュー・ナビ */
+const mn=$('#menu'),bg=$('#bg');
+function menu(o){mn.hidden=!o;bg.setAttribute('aria-expanded',String(o));bg.setAttribute('aria-label',o?'メニューを閉じる':'メニューを開く');document.body.style.overflow=o?'hidden':''}
+bg.onclick=()=>menu(mn.hidden);
+mn.addEventListener('click',e=>{if(e.target.closest('a'))menu(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!mn.hidden)menu(false)});
+matchMedia('(min-width:900px)').addEventListener('change',e=>e.matches&&menu(false));
+{const L=[...document.querySelectorAll('.nav a')],M={hero:'#top',albums:'#albums',gal:'#gal'},
+io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)L.forEach(a=>a.getAttribute('href')===M[e.target.id]?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'))}),{rootMargin:'-45% 0px -50% 0px'});
+Object.keys(M).forEach(k=>io.observe($('#'+k)))}
+
+load();
+})();
+</script>
+</body>
+</html>
